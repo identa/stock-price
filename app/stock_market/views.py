@@ -22,7 +22,8 @@ def get_price(request):
 
     if not quant or not isinstance(quant, int) or quant <= 0:
         return Response(
-            {"message": "quantity not found."}, status=status.HTTP_400_BAD_REQUEST
+            {"message": "quantity not found or invalid."},
+            status=status.HTTP_400_BAD_REQUEST,
         )
 
     resp = requests.get(
