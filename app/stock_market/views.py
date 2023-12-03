@@ -20,7 +20,7 @@ def get_price(request):
             {"message": "symbol not found."}, status=status.HTTP_400_BAD_REQUEST
         )
 
-    if not quant or not isinstance(quant, int):
+    if not quant or not isinstance(quant, int) or quant <= 0:
         return Response(
             {"message": "quantity not found."}, status=status.HTTP_400_BAD_REQUEST
         )
